@@ -15,7 +15,19 @@
         <div class="content">
             <h1>Alternador de Tema</h1>
             <p class="info-text">Essa página demostra como criar um botão de alternancia entre temas claro e escuro usando apenass o HTML e CSS. Click no botão no canto superior direito para experimentar a mudança de tema!</p>
+<style>
+        /* Variáveis padrão (modo claro) */
+        :root {
+      --bg-color: #ffffff;
+      --text-color: #000000;
+    }
 
+    /* Quando o toggle estiver ativado (modo escuro) */
+    #dark-mode-toggle:checked ~ .container {
+      --bg-color: #121212;
+      --text-color: #f5f5f5;
+    }
+</style>
         </div>
     </div>
 </body>
