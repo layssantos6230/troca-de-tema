@@ -26,9 +26,83 @@
     #dark-mode-toggle:checked ~ .container {
       --bg-color: #121212;
       --text-color: #f5f5f5;
+    
+      body {
+      margin: 0;
+      font-family: Arial, sans-serif;
     }
-</style>
-        </div>
-    </div>
+
+    .container {
+      min-height: 100vh;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .toggle-label {
+      margin-bottom: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .toggle-label span {
+      font-weight: bold;
+    }
+
+    /* Esconde o checkbox real */
+    #dark-mode-toggle {
+      display: none;
+    }
+
+    /* Estilo visual do botão toggle */
+    .custom-toggle {
+      width: 50px;
+      height: 25px;
+      background-color: #ccc;
+      border-radius: 25px;
+      position: relative;
+      transition: background-color 0.3s;
+    }
+
+    .custom-toggle::before {
+      content: "";
+      width: 21px;
+      height: 21px;
+      background-color: white;
+      border-radius: 50%;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      transition: transform 0.3s;
+    }
+
+    #dark-mode-toggle:checked + .toggle-label .custom-toggle {
+      background-color: #333;
+    }
+
+    #dark-mode-toggle:checked + .toggle-label .custom-toggle::before {
+      transform: translateX(25px);
+    }
+  </style>
+</head>
+<body>
+  <!-- Toggle -->
+  <input type="checkbox" id="dark-mode-toggle" />
+  <label for="dark-mode-toggle" class="toggle-label">
+    <span>Dark Mode</span>
+    <div class="custom-toggle"></div>
+  </label>
+
+  <!-- Conteúdo da página -->
+  <div class="container">
+    <h1>Bem-vindo ao modo claro/escuro!</h1>
+    <p>Ative o toggle acima para alternar entre os modos.</p>
+  </div>
 </body>
 </html>
