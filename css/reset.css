@@ -120,16 +120,5 @@ h1 {
   #dark-mode-toggle:checked + .toggle-label .custom-toggle::before {
     transform: translateX(30px);
   }
-/* Esconde o checkbox */
-#theme-toggle {
-  display: none;
-}
-/* Quando ativado, muda o tema e a posição da bolinha */
-#theme-toggle:checked ~ .toggle-switch {
-  background-color: #495057;
-  border-color: #6c757d;
-}
 
-#theme-toggle:checked ~ .toggle-switch .toggle-circle {
-  left: 26px; /* desliza a bolinha pra direita */
-}
+
