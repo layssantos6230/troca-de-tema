@@ -5,11 +5,38 @@
     --toggle-bg: #dee2e6;  
     --toggle-circle: #ffffff;  
     --toggle-border: #ced4da;  
-    --toggle-active: #198754;   
+    --toggle-active: #198754;
+    --circle-pos: 4px;
+    --circle-color: white;
     
     --shadow: rgba(0, 0, 0, 0.1);
     --transition-time: 0.3s;
 }
+.toggle-circle {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: var(--circle-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: var(--circle-pos);
+    transition: left var(--transition-time);
+  }
+  
+/* Esconde o checkbox */
+#theme-toggle {
+    display: none;
+  }
+  /* Quando ativado, muda o tema e a posição da bolinha */
+#theme-toggle:checked ~ .toggle-switch {
+    background-color: #495057;
+    border-color: #6c757d;
+  }
+  
+#theme-toggle:checked ~ .toggle-switch .toggle-circle {
+    left: 26px; /* desliza a bolinha pra direita */
+  }
 
 #theme-toggle:checked ~ .page {
     --bg-color: #212529;  
